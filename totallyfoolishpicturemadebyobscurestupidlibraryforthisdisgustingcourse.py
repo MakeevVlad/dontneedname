@@ -59,6 +59,22 @@ def tree(x, y, l, N, q, obj):
     color("green")
     dichotomy(x, y ,N, N, -math.pi/2, l ,q,math.pi*0.2, obj)
 
+#River
+def river():
+    p = ([])
+    p.append([500*0.5, 500*(0.5)])
+    p.append([500*(0.5 - 0.25), 500*(0.5 + 0.25)])
+    p.append([500*(0.5 - 0.1), 500*(0.5 + 0.3)])
+    p.append([500*(0.5 - 0.3), 500*(0.5 + 0.5)])
+    p.append([500*(0.5 + 0.05), 500*(0.5 + 0.5)])
+    p.append([500*(0.5 + 0.15), 500*(0.5 + 0.26)])
+    p.append([500*(0.5 - 0), 500*(0.5 + 0.2)])
+
+    color('blue')
+    polygon(p)
+
+
+
 def main():
     color("yellow")
     rectangle(0,0,500, 500)
@@ -75,14 +91,19 @@ def main():
     color("red")
     circle(250,250,40)
 
+    #Dirt
     color("#FC7C0C")
     rectangle(0, 500, 500, 250)
+
+    river()
+
     obj1 = []
     obj2 = []
     obj3 = []
     tree(500*(0.6), 500*(0.5 + 1/5), 45, 7, 0.7, obj2)
     tree(500*(0.3), 500*(0.5 + 1/3), 50, 7, 0.8, obj1)
     tree(500*(0.8), 500*(0.5 + 0.4), 46, 7, 0.75, obj3)
+
 
 
 onTimer(main, 1)
